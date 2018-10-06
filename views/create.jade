@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  div(class='container')
+    center 
+      h1="Create Tax Object"
+    div(class="row")
+        div(class="col-md-3")
+            a(href="/",class="btn btn-success btn-block")="Back"
+    form(class="form",action="/save",method="POST")
+        div(class="row",style="margin-top:20px")
+            div(class="col-md-6")
+                div(class="form-group")
+                    label="Name"
+                    input(type="text",class="form-control",name="name",required)
+                div(class="form-group")
+                    label="Tax Code"
+                    select(class="form-control",name="tax_code",required)
+                        option(value="",disabled,selected)="Choose"
+                        option(value="1")="Food & Beverages"
+                        option(value="2")="Tobacco"
+                        option(value="3")="Entertainment"
+            div(class="col-md-6")
+                div(class="form-group")
+                    label="Price"
+                    input(type="number",class="form-control",name="price",required,min="0")
+        div(class="row",style="margin-top:20px;")
+            button(class="btn btn-primary")="Submit"

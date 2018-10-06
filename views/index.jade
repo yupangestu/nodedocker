@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  div(class='container')
+    center 
+      h1="Tax Object Management"
+    if save_data
+      h1="AAAA"
+    div(class="row")
+      div(class="col-md-3")
+        a(href="/create",class="btn btn-success btn-block")="Add Tax Object"
+    div(class="row",style="margin-top:10px;")
+      table(class="table table-bordered")
+        thead
+          tr
+            th="Name"
+            th="Tax Code"
+            th="Type"
+            th="Refundable"
+            th="Price"
+            th="Tax"
+            th="Amount"
+        tbody
+          each val in data
+            tr
+              td=val.name
+              td=val.tax_code
+              td=val.type
+              td=val.refund
+              td=val.price
+              td=val.tax
+              td=val.amount
+          else
+            tr
+              td(colspan="8")="No product at the moment"
