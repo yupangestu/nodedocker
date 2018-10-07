@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   web:
     build: ./
@@ -6,13 +6,11 @@ services:
     - ./:/var/www/shopee
     ports:
     - 3000:3000
-    environment:
-    - PORT=3000
     command:
-      sh -c 'npm start'
+      sh -c 'node bin/www'
     depends_on:
-      - db
-  db:
+      - mysql
+  mysql:
     image: mysql
     restart: always
     ports:

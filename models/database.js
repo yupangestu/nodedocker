@@ -1,7 +1,7 @@
 var mysql   = require('mysql');
 
 var connection  = mysql.createConnection({
-    host     : 'db',
+    host     : 'mysql',
     user     : 'root',
     password : 'secret',
     database : 'shopee'
